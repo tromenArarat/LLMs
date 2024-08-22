@@ -1,5 +1,5 @@
 import os
-from langchain.llms import Cohere
+from langchain_community.llms import Cohere
 from dotenv import load_dotenv
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_cohere.chat_models import ChatCohere
@@ -42,8 +42,7 @@ with_message_history = RunnableWithMessageHistory(
     history_messages_key="history",
 )
 
-input = "cómo puedo convertir un pdf a texto con herramientas"
-+"parecidas a las que provee BeatifulSoap respecto a html y xml"
+input = "cómo puedo convertir un pdf a texto con herramientas parecidas a las que provee BeatifulSoap respecto a html y xml"
 
 result = with_message_history.invoke(
     {"tema": "customización de un modelo de llm", 
